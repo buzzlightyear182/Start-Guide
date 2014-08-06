@@ -54,33 +54,32 @@
 						<h2 id="title_gruntfile">Sample Gruntfile.js <span class="sub">Click to view</span></h2>
 						<blockquote id="code_gruntfile" class="hidden">
 						module.exports = function(grunt) {<br>
-							<em>//Project configuration</em><br>
-			<br>
-							grunt.initConfig ({<br>
-								pkg:grunt.file.readJSON('package.json'),<br>
-								uglify: {<br>
-						      options: {<br>
-						      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
-						     	},<br>
-							    build: {<br>
-							      src: 'js/*.js',<br>
-							      dest: 'build/main.min.js'<br>
-							    }<br>
-						  	},<br>
-							  sass: {<br>
-							    dist: {<br>
-						        files: {<br>
-						        'build/main.css':'sass/main.scss'<br>
-						        }<br>
-						      }<br>
-							  }<br>
-							});<br><br>
-						  <em>// Load the plugin that generates css from sass.</em><br>
-						  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
-						  <em>// Load the plugin that provides the "uglify"</em><br>task.
-						  grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
-						  <em>// Default task(s)</em><br>
-						  grunt.registerTask('default', ['uglify', 'sass']);<br>
+							&nbsp;&nbsp;<span class="sub">//Project configuration</span><br><br>
+							&nbsp;&nbsp;grunt.initConfig ({<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;pkg:grunt.file.readJSON('package.json'),<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;uglify: {<br>
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options: {<br>
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
+						     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+							    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;build: {<br>
+							      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src: 'js/*.js',<br>
+							      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest: 'build/main.min.js'<br>
+							    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						  	&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+							  &nbsp;&nbsp;&nbsp;&nbsp;sass: {<br>
+							    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist: {<br>
+						        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;files: {<br>
+						        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'build/main.css':'sass/main.scss'<br>
+						        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							&nbsp;&nbsp;});<br><br>
+						  &nbsp;&nbsp;<span class="sub">// Load the plugin that generates css from sass.</span><br>
+						  &nbsp;&nbsp;grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
+						  &nbsp;&nbsp;<span class="sub">// Load the plugin that provides the "uglify" task</span><br>
+						  &nbsp;&nbsp;grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
+						  &nbsp;&nbsp;<span class="sub">// Default task(s)</span><br>
+						  &nbsp;&nbsp;grunt.registerTask('default', ['uglify', 'sass']);<br>
 						};
 						</blockquote>
 					</article>
