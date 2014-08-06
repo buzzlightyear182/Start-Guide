@@ -1,13 +1,10 @@
 $primary-font: 'Arvo', 'Rockwell', Helvetica, sans-serif;
 $body-font: 'Roboto', Helvetica, sans-serif;
-$grunt-font: 'Lato', Helvetica, sans-serif;
-// $primary-color:
-// $secondary-color:
-// $accents:
 
 $bower-bg: #FFCC2F;
 $bower-title: #EF5734;
 $grunt-title: #453015;
+$blockquote-color: #bdc3c7;
 
 #container {
 	max-width: 1200px;
@@ -85,4 +82,15 @@ ol {
 	font-size: 100px;
 	font-weight: bolder;
 	text-transform: uppercase;
+}
+
+.steps li {
+	line-height: 1.5em;
+}
+
+blockquote {
+	background-color: $blockquote-color;
+	padding: 5px 15px;
+	margin: 0px;
+	border-radius: 5px;
 }
