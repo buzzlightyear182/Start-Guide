@@ -7,12 +7,15 @@ $grunt-title: #453015;
 $grunt-main: #FEA740;
 $blockquote-color: #bdc3c7;
 
+body {
+	background-color: black;
+}
+
 #container {
 	max-width: 1200px;
 	margin: 0px auto;
 	padding: 0px;
 	font-family: $body-font;
-	background-color: black;
 	color: white;
 	height: auto;
 }
@@ -22,17 +25,25 @@ header {
 	padding: 10px auto;
 	width: 100%;
 	text-align: center;
-	border-radius: 20px 20px 0 0;
 }
 
 header h1 {
 	color: white;
 	padding: 10px 0;
+	font-size: 48px;
 }
 
 h1 {
 	font-family: $primary-font;
 	margin: 0px;
+}
+
+h2 {
+	font-family: $primary-font;
+	margin: 0px;
+	font-weight: normal;
+	font-size: 24px;
+	letter-spacing: 2px;
 }
 
 ol {
@@ -107,7 +118,7 @@ blockquote {
 
 #sample_gruntfile {
 	float: right;
-	margin-top: 0px;
+	margin-top: 10px;
 	padding-top: 0px;
 	background-color: $grunt-main;
 	height: auto;
@@ -125,14 +136,19 @@ blockquote {
 
 #code_gruntfile{
 	color: $grunt-title;
+	margin-bottom: 10px;
 }
 
 .sub {
 	font-size: 0.4em;
 	font-style: oblique;
+	font-family: $body-font;
 }
 
 .hidden {
 	display: none;
 }
 
+#additional li{
+	line-height: 1.5em;
+}

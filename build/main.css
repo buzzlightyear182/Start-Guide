@@ -1,9 +1,11 @@
+body {
+  background-color: black; }
+
 #container {
   max-width: 1200px;
   margin: 0px auto;
   padding: 0px;
   font-family: "Roboto", Helvetica, sans-serif;
-  background-color: black;
   color: white;
   height: auto; }
 
@@ -11,16 +13,23 @@ header {
   background-color: black;
   padding: 10px auto;
   width: 100%;
-  text-align: center;
-  border-radius: 20px 20px 0 0; }
+  text-align: center; }
 
 header h1 {
   color: white;
-  padding: 10px 0; }
+  padding: 10px 0;
+  font-size: 48px; }
 
 h1 {
   font-family: "Arvo", "Rockwell", Helvetica, sans-serif;
   margin: 0px; }
+
+h2 {
+  font-family: "Arvo", "Rockwell", Helvetica, sans-serif;
+  margin: 0px;
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: 2px; }
 
 ol {
   margin: 0px;
@@ -82,7 +91,7 @@ blockquote {
 
 #sample_gruntfile {
   float: right;
-  margin-top: 0px;
+  margin-top: 10px;
   padding-top: 0px;
   background-color: #fea740;
   height: auto; }
@@ -96,11 +105,16 @@ blockquote {
   background-color: #fea740; }
 
 #code_gruntfile {
-  color: #453015; }
+  color: #453015;
+  margin-bottom: 10px; }
 
 .sub {
   font-size: 0.4em;
-  font-style: oblique; }
+  font-style: oblique;
+  font-family: "Roboto", Helvetica, sans-serif; }
 
 .hidden {
   display: none; }
+
+#additional li {
+  line-height: 1.5em; }
