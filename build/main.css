@@ -2,13 +2,17 @@
   max-width: 1200px;
   margin: 0px auto;
   padding: 0px;
-  font-family: "Roboto", Helvetica, sans-serif; }
+  font-family: "Roboto", Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  height: auto; }
 
 header {
   background-color: black;
   padding: 10px auto;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  border-radius: 20px 20px 0 0; }
 
 header h1 {
   color: white;
@@ -24,10 +28,12 @@ ol {
 
 .how-to {
   display: inline-block;
-  padding: 10px;
+  padding: 20px 10px 0 10px;
   width: 48%;
-  height: 560px;
   margin: 0px; }
+
+.main {
+  height: 560px; }
 
 .how-to h1 {
   text-align: center;
@@ -45,7 +51,8 @@ ol {
 
 #bower {
   background-color: #ffcc2f;
-  float: left; }
+  float: left;
+  color: black; }
 
 #bower h1 {
   font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
@@ -55,7 +62,8 @@ ol {
 
 #grunt {
   float: right;
-  color: #453015; }
+  color: #453015;
+  background-color: white; }
 
 #grunt h1 {
   font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
@@ -71,3 +79,28 @@ blockquote {
   padding: 5px 15px;
   margin: 0px;
   border-radius: 5px; }
+
+#sample_gruntfile {
+  float: right;
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: #fea740;
+  height: auto; }
+
+#title_gruntfile {
+  padding: 10px;
+  margin: 0px;
+  color: #453015; }
+
+#title_gruntfile:hover {
+  background-color: #fea740; }
+
+#code_gruntfile {
+  color: #453015; }
+
+.sub {
+  font-size: 0.4em;
+  font-style: oblique; }
+
+.hidden {
+  display: none; }

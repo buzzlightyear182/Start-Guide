@@ -13,7 +13,7 @@
 			<header>
 				<h1>A Quick Guide On How to Set-up</h1>
 			</header>
-			<section id="bower" class="how-to">
+			<section id="bower" class="how-to main">
 				<div class="title">
 					<img class="logo" src="images/bower-logo.png" alt="Bower logo"/>
 					<h1>Bower</h1>
@@ -23,11 +23,11 @@
 					<li>Check version: bower --v</li>
 					<li>Generate bower.json file: bower init (press enter for default entry)</li>
 					<li>Install packages to create bower_components: bower install (package_name like jquery, bootstrap, modernizr)</li>
-					<li>Congratulations! You now got Bower packages!</li>
+					<li><strong>Congratulations! You now got Bower packages!</strong></li>
 				</ol>
 			</section>
 
-			<section id="grunt" class="how-to">
+			<section id="grunt" class="how-to main">
 				<div class="title">
 					<img class="logo" src="images/grunt-logo.png" alt="Grunt logo"/>
 					<h1>Grunt</h1>
@@ -46,13 +46,13 @@
 		  				};</blockquote></li>
 					<li>Generate node_components: npm install --save-dev</li>
 					<li>Manually create Gruntfile.js for the tasks</li>
-					<li>Congratulations! Grunt is now set!</li>
+					<li><strong>Congratulations! Grunt is now set!</strong></li>
 				</ol>
 			</section>
 
-			<article id="Gruntfile">
-				<h2>Sample Gruntfile.js</h2>
-				<blockquote>
+			<article id="sample_gruntfile" class="how-to">
+				<h2 id="title_gruntfile">Sample Gruntfile.js <span class="sub">Click to view</span></h2>
+				<blockquote id="code_gruntfile" class="hidden">
 				module.exports = function(grunt) {<br>
 					<em>//Project configuration</em><br>
 	<br>
@@ -74,8 +74,7 @@
 				        }<br>
 				      }<br>
 					  }<br>
-					});<br>
-	<br>
+					});<br><br>
 				  <em>// Load the plugin that generates css from sass.</em><br>
 				  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
 				  <em>// Load the plugin that provides the "uglify"</em><br>task.
@@ -86,7 +85,10 @@
 				</blockquote>
 			</article>
 
-			<article id="Additional"><h1>Additional</h1>
+			<section id="additional" class="how-to">
+				<div class="title">
+					<h1>Additional Notes</h1>
+				</div>
 				<p>* Add html script src from bower_components to html file</p>
 				<p>* Create .gitignore to ignore node_components and bower_components</p>
 			</article>
@@ -96,5 +98,10 @@
 		</div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script>
+    	$("#title_gruntfile").click(function() {
+				$('#code_gruntfile').toggleClass('hidden');
+			})
+		</script>
 	</body>
 </html>
