@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 	  <title>Starting Bower & Grunt</title>
+    <link rel="stylesheet" type="text/css" href="build/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+ 	</head>
+
+	<body>
+		<div id="container">
+			<header>
+				<h1>A Quick Guide On How to Set-up</h1>
+			</header>
+			<section id="bower" class="how-to">
+				<div class="title">
+					<img class="logo" src="images/bower-logo.png" alt="Bower logo"/>
+					<h1>Bower</h1>
+				</div>
+				<ol class="steps">
+					<li>Install: npm install -g bower</li>
+					<li>Check version: bower --v</li>
+					<li>Generate bower.json file: bower init (press enter for default entry)</li>
+					<li>Install packages to create bower_components: bower install (package_name like jquery, bootstrap, modernizr)</li>
+					<li>Congratulations! You now got Bower packages!</li>
+				</ol>
+			</section>
+
+			<section id="grunt" class="how-to">
+				<div class="title">
+					<img class="logo" src="images/grunt-logo.png" alt="Grunt logo"/>
+					<h1>Grunt</h1>
+				</div>
+				<ol class="steps">
+					<li>Install: npm install -g grunt-cli</li>
+					<li>Check version: grunt -version</li>
+					<li>Generate package.json file: npm init<br>
+						<em>Remove "main":"index.js"</em></li>
+					<li>Manually include packages in package.json file, example:
+						<blockquote>
+						"devDependencies": {<br>
+		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt": "^0.4.5",<br>
+		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-sass": "^0.7.3",<br>
+		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-uglify": "^0.5.1"<br>
+		  				};</blockquote></li>
+					<li>Generate node_components: npm install --save-dev</li>
+					<li>Manually create Gruntfile.js for the tasks</li>
+					<li>Congratulations! Grunt is now set!</li>
+				</ol>
+			</section>
+
+			<article id="Gruntfile">
+				<h2>Sample Gruntfile.js</h2>
+				<blockquote>
+				module.exports = function(grunt) {<br>
+					<em>//Project configuration</em><br>
+	<br>
+					grunt.initConfig ({<br>
+						pkg:grunt.file.readJSON('package.json'),<br>
+						uglify: {<br>
+				      options: {<br>
+				      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
+				     	},<br>
+					    build: {<br>
+					      src: 'js/*.js',<br>
+					      dest: 'build/main.min.js'<br>
+					    }<br>
+				  	},<br>
+					  sass: {<br>
+					    dist: {<br>
+				        files: {<br>
+				        'build/main.css':'sass/main.scss'<br>
+				        }<br>
+				      }<br>
+					  }<br>
+					});<br>
+	<br>
+				  <em>// Load the plugin that generates css from sass.</em><br>
+				  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
+				  <em>// Load the plugin that provides the "uglify"</em><br>task.
+				  grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
+				  <em>// Default task(s)</em><br>
+				  grunt.registerTask('default', ['uglify', 'sass']);<br>
+				};
+				</blockquote>
+			</article>
+
+			<article id="Additional"><h1>Additional</h1>
+				<p>* Add html script src from bower_components to html file</p>
+				<p>* Create .gitignore to ignore node_components and bower_components</p>
+			</article>
+			<article id="Getting SASS to work"><h1>SASS</h1>
+				<p>You have to create manually "build/main.css" and "sass/main.scss"</p>
+			</article>
+		</div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+	</body>
+</html>

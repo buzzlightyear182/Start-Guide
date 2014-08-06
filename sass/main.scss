@@ -1,0 +1,88 @@
+$primary-font: 'Arvo', 'Rockwell', Helvetica, sans-serif;
+$body-font: 'Roboto', Helvetica, sans-serif;
+$grunt-font: 'Lato', Helvetica, sans-serif;
+// $primary-color:
+// $secondary-color:
+// $accents:
+
+$bower-bg: #FFCC2F;
+$bower-title: #EF5734;
+$grunt-title: #453015;
+
+#container {
+	max-width: 1200px;
+	margin: 0px auto;
+	padding: 0px;
+	font-family: $body-font;
+}
+
+header {
+	background-color: black;
+	padding: 10px auto;
+	width: 100%;
+	text-align: center;
+}
+
+header h1 {
+	color: white;
+	padding: 10px 0;
+}
+
+h1 {
+	font-family: $primary-font;
+	margin: 0px;
+}
+
+ol {
+	margin: 0px;
+	display: inline-block;
+}
+
+.how-to{
+	display: inline-block;
+	padding: 10px;
+	width: 48%;
+	height: 560px;
+	margin: 0px;
+}
+
+.how-to h1{
+	text-align: center;
+	display: inline;
+}
+
+.how-to img {
+	height: 200px;
+	width: auto;
+	text-align: center;
+	display: inline;
+}
+
+.title {
+	margin: auto;
+	display: block;
+}
+
+#bower {
+	background-color: $bower-bg;
+	float: left;
+}
+
+#bower h1 {
+	font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
+	font-size: 100px;
+	font-weight: bold;
+	color: $bower-title;
+}
+
+#grunt {
+	float: right;
+	color: $grunt-title;
+}
+
+#grunt h1 {
+	font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
+	font-size: 100px;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
