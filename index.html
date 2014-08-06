@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
- 	  <title>Starting Bower & Grunt</title>
+ 	  <title>Start Guide for Bower & Grunt</title>
     <link rel="stylesheet" type="text/css" href="build/main.css">
     <link href='http://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
  	</head>
 
 	<body>
@@ -13,7 +13,7 @@
 			<header>
 				<h1>A Quick Guide On How to Set-up</h1>
 			</header>
-			<section id="bower" class="how-to main">
+			<div id="bower" class="how-to main">
 				<div class="title">
 					<img class="logo" src="images/bower-logo.png" alt="Bower logo"/>
 					<h1>Bower</h1>
@@ -25,68 +25,70 @@
 					<li>Install packages to create bower_components: bower install (package_name like jquery, bootstrap, modernizr)</li>
 					<li><strong>Congratulations! You now got Bower packages!</strong></li>
 				</ol>
-			</section>
+			</div>
 
-			<section id="grunt" class="how-to main">
-				<div class="title">
-					<img class="logo" src="images/grunt-logo.png" alt="Grunt logo"/>
-					<h1>Grunt</h1>
-				</div>
-				<ol class="steps">
-					<li>Install: npm install -g grunt-cli</li>
-					<li>Check version: grunt -version</li>
-					<li>Generate package.json file: npm init<br>
-						<em>Remove "main":"index.js"</em></li>
-					<li>Manually include packages in package.json file, example:
-						<blockquote>
-						"devDependencies": {<br>
-		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt": "^0.4.5",<br>
-		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-sass": "^0.7.3",<br>
-		    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-uglify": "^0.5.1"<br>
-		  				};</blockquote></li>
-					<li>Generate node_components: npm install --save-dev</li>
-					<li>Manually create Gruntfile.js for the tasks  	 <span class="sub"><a href="Gruntfile.js">or click to download</a></span></li>
-					<li><strong>Congratulations! Grunt is now set!</strong></li>
-				</ol>
-			</section>
+			<div class="grunt_container main">
+				<section id="grunt" class="how-to">
+					<div class="title">
+						<img class="logo" src="images/grunt-logo.png" alt="Grunt logo"/>
+						<h1>Grunt</h1>
+					</div>
+					<ol class="steps">
+						<li>Install: npm install -g grunt-cli</li>
+						<li>Check version: grunt -version</li>
+						<li>Generate package.json file: npm init<br>
+							<em>Remove "main":"index.js"</em></li>
+						<li>Manually include packages in package.json file, example:
+							<blockquote>
+							"devDependencies": {<br>
+			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt": "^0.4.5",<br>
+			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-sass": "^0.7.3",<br>
+			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-uglify": "^0.5.1"<br>
+			  				};</blockquote></li>
+						<li>Generate node_components: npm install --save-dev</li>
+						<li>Manually create Gruntfile.js for the tasks  	 <span class="sub"><a href="Gruntfile.js">or click to download</a></span></li>
+						<li><strong>Congratulations! Grunt is now set!</strong></li>
+					</ol>
 
-			<article id="sample_gruntfile" class="how-to">
-				<h2 id="title_gruntfile">Sample Gruntfile.js <span class="sub">Click to view</span></h2>
-				<blockquote id="code_gruntfile" class="hidden">
-				module.exports = function(grunt) {<br>
-					<em>//Project configuration</em><br>
-	<br>
-					grunt.initConfig ({<br>
-						pkg:grunt.file.readJSON('package.json'),<br>
-						uglify: {<br>
-				      options: {<br>
-				      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
-				     	},<br>
-					    build: {<br>
-					      src: 'js/*.js',<br>
-					      dest: 'build/main.min.js'<br>
-					    }<br>
-				  	},<br>
-					  sass: {<br>
-					    dist: {<br>
-				        files: {<br>
-				        'build/main.css':'sass/main.scss'<br>
-				        }<br>
-				      }<br>
-					  }<br>
-					});<br><br>
-				  <em>// Load the plugin that generates css from sass.</em><br>
-				  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
-				  <em>// Load the plugin that provides the "uglify"</em><br>task.
-				  grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
-				  <em>// Default task(s)</em><br>
-				  grunt.registerTask('default', ['uglify', 'sass']);<br>
-				};
-				</blockquote>
-			</article>
+					<article id="sample_gruntfile">
+						<h2 id="title_gruntfile">Sample Gruntfile.js <span class="sub">Click to view</span></h2>
+						<blockquote id="code_gruntfile" class="hidden">
+						module.exports = function(grunt) {<br>
+							<em>//Project configuration</em><br>
+			<br>
+							grunt.initConfig ({<br>
+								pkg:grunt.file.readJSON('package.json'),<br>
+								uglify: {<br>
+						      options: {<br>
+						      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
+						     	},<br>
+							    build: {<br>
+							      src: 'js/*.js',<br>
+							      dest: 'build/main.min.js'<br>
+							    }<br>
+						  	},<br>
+							  sass: {<br>
+							    dist: {<br>
+						        files: {<br>
+						        'build/main.css':'sass/main.scss'<br>
+						        }<br>
+						      }<br>
+							  }<br>
+							});<br><br>
+						  <em>// Load the plugin that generates css from sass.</em><br>
+						  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
+						  <em>// Load the plugin that provides the "uglify"</em><br>task.
+						  grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
+						  <em>// Default task(s)</em><br>
+						  grunt.registerTask('default', ['uglify', 'sass']);<br>
+						};
+						</blockquote>
+					</article>
+				</section>
+			</div>
 
-			<section id="additional" class="how-to">
-				<div class="title">
+			<div id="additional">
+				<div class="title" class="how-to">
 					<h2>Additional Notes</h2>
 				</div>
 				<ul>
@@ -94,7 +96,7 @@
 					<li>Create .gitignore to ignore node_components and bower_components</li>
 					<li>SASS: create manually "build/main.css" and "sass/main.scss"</li>
 				</ul>
-			</section>
+			</div>
 		</div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>

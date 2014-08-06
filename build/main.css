@@ -2,7 +2,7 @@ body {
   background-color: black; }
 
 #container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0px auto;
   padding: 0px;
   font-family: "Roboto", Helvetica, sans-serif;
@@ -12,13 +12,12 @@ body {
 header {
   background-color: black;
   padding: 10px auto;
-  width: 100%;
   text-align: center; }
 
 header h1 {
   color: white;
   padding: 10px 0;
-  font-size: 48px; }
+  font-size: 300%; }
 
 h1 {
   font-family: "Arvo", "Rockwell", Helvetica, sans-serif;
@@ -32,17 +31,19 @@ h2 {
   letter-spacing: 2px; }
 
 ol {
-  margin: 0px;
-  display: inline-block; }
-
-.how-to {
-  display: inline-block;
-  padding: 20px 10px 0 10px;
-  width: 48%;
   margin: 0px; }
 
 .main {
-  height: 560px; }
+  width: 48%;
+  height: auto;
+  margin: auto; }
+
+.grunt_container {
+  display: inline-block; }
+
+.how-to {
+  margin: 0px;
+  height: auto; }
 
 .how-to h1 {
   text-align: center;
@@ -56,29 +57,38 @@ ol {
 
 .title {
   margin: auto;
-  display: block; }
+  display: block;
+  padding-bottom: 10px; }
 
 #bower {
   background-color: #ffcc2f;
   float: left;
-  color: black; }
+  color: black;
+  padding: 20px 10px; }
 
 #bower h1 {
   font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
-  font-size: 100px;
+  font-size: 450%;
   font-weight: bold;
   color: #ef5734; }
 
+#bower li:last-child {
+  padding-bottom: 250px; }
+
 #grunt {
-  float: right;
   color: #453015;
-  background-color: white; }
+  background-color: white;
+  position: relative;
+  padding: 20px 10px; }
 
 #grunt h1 {
   font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
-  font-size: 100px;
+  font-size: 450%;
   font-weight: bolder;
   text-transform: uppercase; }
+
+#grunt ol {
+  margin-bottom: 10px; }
 
 .steps li {
   line-height: 1.5em; }
@@ -90,9 +100,8 @@ blockquote {
   border-radius: 5px; }
 
 #sample_gruntfile {
-  float: right;
-  margin-top: 10px;
-  padding-top: 0px;
+  padding: 0px 10px;
+  padding-bottom: 5px;
   background-color: #fea740;
   height: auto; }
 
@@ -115,6 +124,20 @@ blockquote {
 
 .hidden {
   display: none; }
+
+#additonal {
+  display: inline;
+  padding-top: 0px;
+  position: absolute;
+  width: 40%; }
+
+#additional h2 {
+  border-bottom: 1px solid white;
+  padding-top: 20px; }
+
+#additional ul {
+  margin: 0px;
+  padding-bottom: 20px; }
 
 #additional li {
   line-height: 1.5em; }
