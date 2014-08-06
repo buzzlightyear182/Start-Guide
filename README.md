@@ -1,12 +1,14 @@
-Start-Guide
+Set-up Guide to Bower & Grunt
 ===========
 
-Created simple tutorial start guide for Bower &amp; Grunt using npm
+Created simple tutorial guide for setting up Bower &amp; Grunt using npm
+
+To view: http://buzzlightyear182.github.io/Start-Guide/
 
 Feel free to comment if there are any mistakes
 
 
-Samples files:
+Sample files:
 
 Bower components - jQuery, Modernizr and Bootstrap
 
