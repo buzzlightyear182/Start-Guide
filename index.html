@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="build/main.css">
     <link href='http://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/monokai.min.css">
     <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
  	</head>
 
@@ -12,7 +13,9 @@
 		<div id="container">
 			<header>
 				<h1>A Quick Guide On How to Set-up</h1>
+				<span class="sub">Hover over the animals to see them move!</span>
 			</header>
+			<div class="slideDown">
 			<div id="bower" class="how-to main">
 				<div class="title">
 					<img class="logo" src="images/bower-logo.png" alt="Bower logo"/>
@@ -39,12 +42,14 @@
 						<li>Generate package.json file: npm init<br>
 							<em>Remove "main":"index.js"</em></li>
 						<li>Manually include packages in package.json file, example:
-							<blockquote>
-							"devDependencies": {<br>
-			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt": "^0.4.5",<br>
-			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-sass": "^0.7.3",<br>
-			    			&nbsp;&nbsp;&nbsp;&nbsp;"grunt-contrib-uglify": "^0.5.1"<br>
-			  				};</blockquote></li>
+							<pre style="margin: 1em -0 1em -2em;"><code class='json'>
+"devDependencies": {
+	"grunt": "^0.4.5",
+	"grunt-contrib-sass": "^0.7.3",
+	"grunt-contrib-uglify": "^0.5.1"
+};
+			  			</code></pre>
+			  		</li>
 						<li>Generate node_components: npm install --save-dev</li>
 						<li>Manually create Gruntfile.js for the tasks  	 <span class="sub"><a href="Gruntfile.js">or click to download</a></span></li>
 						<li><strong>Congratulations! Grunt is now set!</strong></li>
@@ -52,37 +57,36 @@
 
 					<article id="sample_gruntfile">
 						<h2 id="title_gruntfile">Sample Gruntfile.js <span class="sub">Click to view</span></h2>
-						<blockquote id="code_gruntfile" class="hidden">
-						module.exports = function(grunt) {<br>
-							<em>//Project configuration</em><br>
-			<br>
-							grunt.initConfig ({<br>
-								pkg:grunt.file.readJSON('package.json'),<br>
-								uglify: {<br>
-						      options: {<br>
-						      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'<br>
-						     	},<br>
-							    build: {<br>
-							      src: 'js/*.js',<br>
-							      dest: 'build/main.min.js'<br>
-							    }<br>
-						  	},<br>
-							  sass: {<br>
-							    dist: {<br>
-						        files: {<br>
-						        'build/main.css':'sass/main.scss'<br>
-						        }<br>
-						      }<br>
-							  }<br>
-							});<br><br>
-						  <em>// Load the plugin that generates css from sass.</em><br>
-						  grunt.loadNpmTasks('grunt-contrib-sass');<br><br>
-						  <em>// Load the plugin that provides the "uglify"</em><br>task.
-						  grunt.loadNpmTasks('grunt-contrib-uglify');<br><br>
-						  <em>// Default task(s)</em><br>
-						  grunt.registerTask('default', ['uglify', 'sass']);<br>
-						};
-						</blockquote>
+<pre class="hidden" id='code_gruntfile'><code class='javascript'>
+module.exports = function(grunt) {
+	//Project configuration
+	grunt.initConfig ({
+		pkg:grunt.file.readJSON('package.json'),
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			},
+			build: {
+				src: 'js/*.js',
+				dest: 'build/main.min.js'
+			}
+		},
+		sass: {
+			dist: {
+				files: {
+					'build/main.css':'sass/main.scss'
+				}
+			}
+		}
+	});
+	// Load the plugin that generates css from sass.
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	// Load the plugin that provides the "uglify" task
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	// Default task(s)
+	grunt.registerTask('default', ['uglify', 'sass']);
+};
+</code></pre>
 					</article>
 				</section>
 			</div>
@@ -97,12 +101,27 @@
 					<li>SASS: create manually "build/main.css" and "sass/main.scss"</li>
 				</ul>
 			</div>
+				<footer class="sub">
+				&copy <a href="www.github.com/buzzlightyear182">JHD on www.github.com/buzzlightyear182</a>
+				</footer>
+			</div>
 		</div>
 
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js'></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script>
+    	hljs.configure({
+    		tabReplace: '  '
+    	});
+	    hljs.initHighlightingOnLoad();
     	$("#title_gruntfile").click(function() {
 				$('#code_gruntfile').toggleClass('hidden');
+			})
+    	$("#grunt img").hover(function() {
+				$("#grunt img").toggleClass('pulse');
+			})
+			$("#bower img").hover(function() {
+				$("#bower img").toggleClass('tossing');
 			})
 		</script>
 	</body>
